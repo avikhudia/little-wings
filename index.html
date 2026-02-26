@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Wing - Top Rated Digital Agency</title>
+    <meta name="description" content="Little Wing offers expert Web Development, SEO, App Design, and Social Media Marketing services to grow your business globally. Creative solutions since 2020.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS File Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Background Particles Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+  
+                Little Wing
+            </a>
+            
+            <!-- Dark Mode Toggle (Mobile View) -->
+            <button class="theme-toggle-btn d-lg-none ms-auto me-3" onclick="toggleTheme()">
+                <i class="fa-solid fa-moon" id="theme-icon-mobile"></i>
+            </button>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <!-- Added Portfolio Link Here -->
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                
+                <!-- Dark Mode Toggle (Desktop View) -->
+                <button class="theme-toggle-btn d-none d-lg-flex" onclick="toggleTheme()">
+                    <i class="fa-solid fa-moon" id="theme-icon-desktop"></i>
+                </button>
+
+                <a href="contact.html" class="btn btn-primary-custom">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="welcome-badge">
+                        <i class="fa-solid fa-rocket"></i> Welcome To Little Wing
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Expert Solutions for<br>
+                        <span class="highlight-text" id="typewriter-text"></span><span class="cursor"></span>
+                    </h1>
+                    
+                    <p class="hero-subtitle">
+                        Gain deeper social insights. Unlock growth opportunities, optimize strategies & connect with your audience like never before.
+                    </p>
+                    
+                    <a href="contact.html" class="btn btn-cta">
+                        Start Free Trial <i class="fa-solid fa-chevron-right ms-2" style="font-size: 0.8rem;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3D Illustration Area -->
+            <div class="illustration-container">
+                <img src="/img/herosection.png" alt="Little Wing Expert" class="main-character">
+
+                <!-- Floating Card 1: Insights -->
+                <div class="floating-card card-left-top text-start">
+                    <h6 class="fw-bold mb-3" style="font-size: 0.9rem;">Insights Overview</h6>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="ui-avatar me-2"></div>
+                        <div style="line-height: 1.2;">
+                            <small class="d-block text-muted" style="font-size: 0.7rem;">@littlewing</small>
+                            <span class="fw-bold" style="font-size: 0.8rem;">Little Wing Studio</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between text-center mb-2">
+                        <div><small class="d-block text-muted" style="font-size: 0.6rem;">POSTS</small><span class="fw-bold" style="font-size: 0.9rem;">230</span></div>
+                        <div><small class="d-block text-muted" style="font-size: 0.6rem;">FOLLOWERS</small><span class="fw-bold" style="font-size: 0.9rem;">2.6k</span></div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+                        <small class="text-muted" style="font-size: 0.7rem;">Best Performance</small><span class="stat-badge">+ 83.7%</span>
+                    </div>
+                </div>
+
+                <!-- Floating Card 2: Post Insight -->
+                <div class="floating-card card-right-center text-start">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div><div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center" style="width:25px; height:25px; font-size:0.7rem;"><i class="fa-solid fa-bell"></i></div></div>
+                        <small class="text-muted">Week 1 <i class="fa-solid fa-caret-down"></i></small>
+                    </div>
+                    <h6 class="fw-bold" style="font-size: 0.9rem;">Post Insight</h6>
+                    <div class="ui-graph-bar">
+                        <div class="bar" style="height: 40%;"></div><div class="bar active" style="height: 60%;"></div>
+                        <div class="bar" style="height: 30%;"></div><div class="bar active" style="height: 80%;"></div>
+                        <div class="bar" style="height: 50%;"></div><div class="bar active" style="height: 90%;"></div>
+                        <div class="bar" style="height: 40%;"></div>
+                    </div>
+                </div>
+
+                <!-- Floating Card 3: Followers -->
+                <div class="floating-card card-left-bottom">
+                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width:40px; height:40px;"><i class="fa-solid fa-user-plus"></i></div>
+                    <div><small class="d-block text-muted" style="font-size: 0.7rem;">Followers</small><span class="fw-bold fs-5">2.648</span><span class="stat-badge ms-2" style="font-size: 0.7rem;">+ 6.2%</span></div>
+                </div>
+
+                <!-- Floating Card 4: Icons -->
+                <div class="floating-card card-right-bottom">
+                    <a href="#" class="social-icon icon-ig text-decoration-none"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon icon-fb text-decoration-none"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon icon-tk text-decoration-none"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="social-icon icon-tw text-decoration-none"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+
+                <!-- SVG Arrows -->
+                <svg class="drawn-arrow arrow-1" viewBox="0 0 100 50">
+                    <path d="M10,40 Q50,0 90,30" fill="none" stroke="#2D3436" stroke-width="2" marker-end="url(#arrowhead)"/>
+                    <defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2D3436"/></marker></defs>
+                </svg>
+                <svg class="drawn-arrow arrow-2" viewBox="0 0 100 50">
+                    <path d="M10,10 Q50,50 90,20" fill="none" stroke="#2D3436" stroke-width="2" marker-end="url(#arrowhead)"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. PORTFOLIO SECTION (Moved Up after Hero) -->
+    <section id="portfolio" class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-label" style="color:var(--primary-color)">PORTFOLIO</span>
+                <h2 class="section-title">Our Recent Works</h2>
+                
+                <!-- Filter Buttons -->
+                <div class="portfolio-filters mt-4">
+                    <button class="filter-btn active" onclick="filterPortfolio('all')">All</button>
+                    <button class="filter-btn" onclick="filterPortfolio('web')">Web Development</button>
+                    <button class="filter-btn" onclick="filterPortfolio('app')">Mobile Apps</button>
+                    <button class="filter-btn" onclick="filterPortfolio('video')">Video Editing</button>
+                    <button class="filter-btn" onclick="filterPortfolio('graphics')">Branding & Graphics</button>
+                    <button class="filter-btn" onclick="filterPortfolio('smm')">Social Media</button>
+                </div>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="row g-4 portfolio-grid">
+                
+                <!-- Project 1: Web -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="web">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="SaaS Dashboard">
+                        </div>
+                        <div class="portfolio-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="cat-tag text-purple">WEB DEVELOPMENT</span>
+                                <span class="year text-muted">2024</span>
+                            </div>
+                            <h4 class="project-title">Cloud-Based SaaS Platform</h4>
+                            <p class="project-desc">A comprehensive dashboard for managing business analytics and team collaboration.</p>
+                            <div class="tech-tags">
+                                <span>React</span><span>Node.js</span><span>AWS</span>
+                            </div>
+                            <a href="#" class="view-case-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Video -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="video">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=600&q=80" alt="Video Editing">
+                        </div>
+                        <div class="portfolio-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="cat-tag text-red">VIDEO EDITING</span>
+                                <span class="year text-muted">2024</span>
+                            </div>
+                            <h4 class="project-title">Tech Brand Promo Reel</h4>
+                            <p class="project-desc">High-energy promotional video editing with motion graphics and sound design.</p>
+                            <div class="tech-tags">
+                                <span>Premiere Pro</span><span>After Effects</span>
+                            </div>
+                            <a href="#" class="view-case-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: App -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="app">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80" alt="Mobile App">
+                        </div>
+                        <div class="portfolio-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="cat-tag text-blue">MOBILE APPS</span>
+                                <span class="year text-muted">2024</span>
+                            </div>
+                            <h4 class="project-title">Fitness Tracking App</h4>
+                            <p class="project-desc">A cross-platform mobile application for tracking workouts and nutrition plans.</p>
+                            <div class="tech-tags">
+                                <span>Flutter</span><span>Firebase</span>
+                            </div>
+                            <a href="#" class="view-case-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Branding -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="graphics">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1626785774583-b756fe97ea56?auto=format&fit=crop&w=600&q=80" alt="Branding">
+                        </div>
+                        <div class="portfolio-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="cat-tag text-orange">BRANDING</span>
+                                <span class="year text-muted">2023</span>
+                            </div>
+                            <h4 class="project-title">Fintech Startup Identity</h4>
+                            <p class="project-desc">Complete visual identity design including logo, stationery, and social media kit.</p>
+                            <div class="tech-tags">
+                                <span>Illustrator</span><span>Photoshop</span>
+                            </div>
+                            <a href="#" class="view-case-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: SMM -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="smm">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <img src="/img/IMG_1156.webp " alt="Social Media">
+                        </div>
+                        <div class="portfolio-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="cat-tag text-pink">SOCIAL MEDIA</span>
+                                <span class="year text-muted">2023</span>
+                            </div>
+                            <h4 class="project-title">Fashion Brand Growth</h4>
+                            <p class="project-desc">Managed Instagram and Facebook pages resulting in 300% growth in engagement.</p>
+                            <div class="tech-tags">
+                                <span>Content Strategy</span><span>Ads Manager</span>
+                            </div>
+                            <a href="#" class="view-case-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Web -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="web">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1481487484168-9b930d55208d?auto=format&fit=crop&w=600&q=80" alt="Portfolio Website">
+                        </div>
+                        <div class="portfolio-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="cat-tag text-purple">WEB DEVELOPMENT</span>
+                                <span class="year text-muted">2023</span>
+                            </div>
+                            <h4 class="project-title">Creative Portfolio Site</h4>
+                            <p class="project-desc">A highly interactive portfolio website for a photographer with 3D galleries.</p>
+                            <div class="tech-tags">
+                                <span>Three.js</span><span>GSAP</span>
+                            </div>
+                            <a href="#" class="view-case-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted Partners Section (Grid) -->
+    <section class="partners-section">
+        <div class="container">
+            <p class="partners-label text-center">Trusted by world's leading brands</p>
+            <div class="row justify-content-center align-items-center g-5">
+                <div class="col-6 col-md-2">
+                    <div class="partner-logo">
+                        <img src="./img/aseesfurniture.webp" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="partner-logo">
+                        <img src="./img/avenue.webp" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="partner-logo"> <img src="./img/brightsky.jpg" class="img-fluid" alt=""></div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="partner-logo"> <img src="./img/Caloyaa.jpg" class="img-fluid" alt=""></div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="partner-logo"> <img src="./img/ewh.webp" class="img-fluid" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. WHO WE ARE (History) -->
+    <section class="creative-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="creative-img-wrapper">
+                         <!-- Decorative Shape -->
+                         <div class="creative-deco-shape"></div>
+                         <!-- Image -->
+                         <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Creative Team at Work" class="creative-img">
+                         <!-- Year Badge -->
+                         <div class="creative-year-badge">
+                            Creative Since 2020
+                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <span class="about-label">WHO WE ARE</span>
+                    <h2 class="section-heading">We are Creative &<br> <span class="text-underline-curve">Innovative</span></h2>
+                    <p class="about-desc">
+                        Little Wing is a long-established fact in the digital world. A reader will be distracted by the readable content of a page when looking at its layout. We focus on quality, speed, and modern aesthetics.
+                    </p>
+                    <a href="about.html" class="btn btn-primary-custom">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. TECH EXPERTISE -->
+    <section class="tech-categories-section">
+        <div class="container">
+            <h2 class="section-heading text-center">Our Tech Expertise</h2>
+            <div class="section-curve-line"></div>
+            <p class="text-center text-muted mb-5" style="max-width: 600px; margin: 0 auto;">
+                We specialize in a wide range of technologies and digital services to cover all your business needs under one roof.
+            </p>
+
+            <div class="row">
+                <!-- Tech Item 1: Web Dev -->
+                <div class="col-md-4 col-lg-4">
+                    <a href="services.html" class="category-card bg-soft-green">
+                        <div class="category-icon text-green"><i class="fa-solid fa-code"></i></div>
+                        <span class="category-text">Full Stack Web Dev</span>
+                    </a>
+                </div>
+
+                <!-- Tech Item 2: Mobile Apps -->
+                <div class="col-md-4 col-lg-4">
+                    <a href="services.html" class="category-card bg-soft-purple">
+                        <div class="category-icon text-purple"><i class="fa-solid fa-mobile-screen"></i></div>
+                        <span class="category-text">Mobile App Solutions</span>
+                    </a>
+                </div>
+
+                <!-- Tech Item 3: SEO -->
+                <div class="col-md-4 col-lg-4">
+                    <a href="services.html" class="category-card bg-soft-orange">
+                        <div class="category-icon text-orange"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <span class="category-text">SEO & Analytics</span>
+                    </a>
+                </div>
+                
+                <!-- Added a few more for balance -->
+                <div class="col-md-4 col-lg-4">
+                    <a href="services.html" class="category-card bg-soft-blue">
+                        <div class="category-icon text-blue"><i class="fa-solid fa-cloud"></i></div>
+                        <span class="category-text">Cloud Computing</span>
+                    </a>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <a href="services.html" class="category-card bg-soft-pink">
+                        <div class="category-icon text-pink"><i class="fa-solid fa-pen-nib"></i></div>
+                        <span class="category-text">UI/UX Design</span>
+                    </a>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <a href="services.html" class="category-card bg-soft-yellow">
+                        <div class="category-icon text-yellow"><i class="fa-solid fa-bullhorn"></i></div>
+                        <span class="category-text">Digital Marketing</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. BUSINESS CHANGE CTA -->
+    <section class="business-change-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <span class="about-label">HOW CAN WE HELP</span>
+                    <h2 class="section-heading">We Help to Create your<br> <span style="color:var(--primary-color);">Business Change</span></h2>
+                    <p class="about-desc">
+                        We leverage cutting-edge technology to drive SEO results and brand growth. Join hundreds of successful companies who trust Little Wing for their digital transformation.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary-custom">Let's Get Started</a>
+
+                    <div class="d-flex flex-wrap mt-4 gap-3">
+                        <div class="cta-stat-box m-0">
+                            <span class="cta-emoji">🚀</span>
+                            <div>
+                                <h4 class="fw-bold mb-0">800+</h4>
+                                <small class="text-muted">Complete Projects</small>
+                            </div>
+                        </div>
+                        <div class="cta-stat-box m-0">
+                            <span class="cta-emoji">⭐</span>
+                            <div>
+                                <h4 class="fw-bold mb-0">300+</h4>
+                                <small class="text-muted">Happy Clients</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="cta-3d-wrapper position-relative text-center">
+                        <div class="cta-circle-bg" style="left: 50%; top: 50%; transform: translate(-50%, -50%);"></div>
+                        <!-- 3D Character Sitting in Chair -->
+                        <img src="https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=740" alt="Business Growth" class="cta-3d-char position-relative z-2" style="border-radius: 20px; max-width: 80%;">
+                        
+                        <!-- Added Floating Cards for Polish -->
+                        <div class="floating-card d-none d-md-flex align-items-center gap-2" style="top: 15%; right: 5%; padding: 10px 15px; animation-delay: 1s;">
+                            <div style="width: 30px; height: 30px; background: #e3f2fd; color: #2196f3; display:flex; align-items:center; justify-content:center; border-radius:50%;"><i class="fa-solid fa-chart-line"></i></div>
+                            <div><small class="fw-bold d-block text-dark">Growth</small><small class="text-success" style="font-size:0.7rem">+125%</small></div>
+                        </div>
+                        
+                        <div class="floating-card d-none d-md-flex align-items-center gap-2" style="bottom: 15%; left: 0%; padding: 10px 15px; animation-delay: 2s;">
+                             <div style="width: 30px; height: 30px; background: #fce4ec; color: #e91e63; display:flex; align-items:center; justify-content:center; border-radius:50%;"><i class="fa-solid fa-check"></i></div>
+                            <div><small class="fw-bold d-block text-dark">Verified</small><small class="text-muted" style="font-size:0.7rem">Agency</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. ABOUT SECTION (Remote) -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Column: Image Collage -->
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="about-image-wrapper">
+                        <!-- Decorative Backgrounds -->
+                        <div class="about-blob"></div>
+                        <div class="about-dots"></div>
+                        
+                        <!-- Main Image -->
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="About Little Wing" class="about-main-img">
+                        
+                        <!-- Floating Card 1: Video -->
+                        <div class="about-floating-card-1">
+                            <div class="play-btn-mock"><i class="fa-solid fa-play"></i></div>
+                            <div style="width: 100%; height: 8px; background: #eee; border-radius: 4px; margin-bottom: 5px;"></div>
+                            <div style="width: 70%; height: 8px; background: #eee; border-radius: 4px;"></div>
+                        </div>
+
+                        <!-- Floating Card 2: Awards -->
+                        <div class="about-floating-card-2">
+                            <div class="award-icon"><i class="fa-solid fa-star"></i></div>
+                            <div>
+                                <small class="text-muted d-block" style="font-size: 0.7rem;">Achievement</small>
+                                <span style="font-weight: 700; font-size: 0.9rem; color: #2d3436;">Best Tech Agency</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Content -->
+                <div class="col-lg-6 position-relative">
+                    <div class="yellow-ring"></div>
+                    <div class="about-content">
+                        <span class="about-label">REMOTE EXPERTS</span>
+                        <h2 class="about-heading">
+                            Grow Your Business From <span class="text-underline-curve">Anywhere
+                                <svg viewBox="0 0 100 20"><path d="M0,10 Q50,20 100,10" /></svg>
+                            </span>
+                        </h2>
+                        <p class="about-desc">
+                            We are a team of passionate tech enthusiasts dedicated to transforming your digital presence. Whether you are a startup or an established enterprise, our remote-first culture ensures we deliver top-tier results no matter where you are.
+                        </p>
+                        
+                        <ul class="list-unstyled about-features">
+                            <li><i class="fa-solid fa-check check-icon"></i> Expert Developers & Designers</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Seamless Online Remote Collaboration</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Lifetime Support & Maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <!-- Brand Column -->
+                <div class="col-lg-3 mb-4 mb-lg-0">
+                    <div class="footer-heading">LITTLE WING</div>
+                    <div class="footer-brand-info">
+                        <p class="mb-1">hello@littlewing.in</p>
+                        <p class="mb-3">+91 987 654 3210</p>
+                        <div class="footer-social-icons">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Column -->
+                <div class="col-lg-2 col-6 mb-4 mb-lg-0">
+                    <div class="footer-heading">Company</div>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Mobile</a></li>
+                        <li><a href="#">How it works</a></li>
+                    </ul>
+                </div>
+
+                <!-- About Column -->
+                <div class="col-lg-2 col-6 mb-4 mb-lg-0">
+                    <div class="footer-heading">Support</div>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Product Column -->
+                <div class="col-lg-2 col-6 mb-4 mb-lg-0">
+                    <div class="footer-heading">Legal</div>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+
+                <!-- Download Column -->
+                <div class="col-lg-3 col-6">
+                    <div class="footer-heading">Download App</div>
+                    <a href="#" class="app-btn">
+                        <i class="fa-brands fa-google-play"></i>
+                        <div>
+                            <small class="d-block" style="font-size:0.7rem; line-height:1;">GET IT ON</small>
+                            <span class="fw-bold">Google Play</span>
+                        </div>
+                    </a>
+                    <a href="#" class="app-btn">
+                        <i class="fa-brands fa-apple"></i>
+                        <div>
+                            <small class="d-block" style="font-size:0.7rem; line-height:1;">Download on the</small>
+                            <span class="fw-bold">Apple Store</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 pt-4 border-top">
+                <small class="text-muted">&copy; 2023 Little Wing Solutions. All Rights Reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts for Particles and Typewriter -->
+    <script>
+        // --- FILTER PORTFOLIO LOGIC ---
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update Active Button
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.innerText.toLowerCase().includes(category) || 
+                   (category === 'all' && btn.innerText === 'All') ||
+                   (category === 'graphics' && btn.innerText.includes('Graphics')) ||
+                   (category === 'smm' && btn.innerText.includes('Social'))) {
+                    btn.classList.add('active');
+                }
+            });
+            // Just for precise 'active' class assignment logic based on onclick param
+            buttons.forEach(btn => {
+                 if(btn.getAttribute('onclick').includes(category)) {
+                     // remove active from all first
+                     buttons.forEach(b => b.classList.remove('active'));
+                     btn.classList.add('active');
+                 }
+            });
+
+
+            // Filter Items
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                    // Optional: Add fade animation here
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // --- TYPEWRITER EFFECT ---
+        const textElement = document.getElementById('typewriter-text');
+        const phrases = ["Social Media Management", "Web Development", "App Design", "SEO & Branding", "Tech Solutions"];
+        let phraseIndex = 0; let charIndex = 0; let isDeleting = false; let typeSpeed = 100;
+
+        function typeWriter() {
+            if(!textElement) return; // Guard for pages without typewriter
+            const currentPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+                textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--; typeSpeed = 50;
+            } else {
+                textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++; typeSpeed = 100;
+            }
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isDeleting = true; typeSpeed = 2000;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false; phraseIndex = (phraseIndex + 1) % phrases.length; typeSpeed = 500;
+            }
+            setTimeout(typeWriter, typeSpeed);
+        }
+        document.addEventListener('DOMContentLoaded', typeWriter);
+
+        // --- THEME TOGGLE ---
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            
+            // Toggle icons for both desktop and mobile buttons
+            const desktopIcon = document.getElementById('theme-icon-desktop');
+            const mobileIcon = document.getElementById('theme-icon-mobile');
+            
+            if(isDark){
+                if(desktopIcon) { desktopIcon.classList.remove('fa-moon'); desktopIcon.classList.add('fa-sun'); }
+                if(mobileIcon) { mobileIcon.classList.remove('fa-moon'); mobileIcon.classList.add('fa-sun'); }
+            } else {
+                if(desktopIcon) { desktopIcon.classList.remove('fa-sun'); desktopIcon.classList.add('fa-moon'); }
+                if(mobileIcon) { mobileIcon.classList.remove('fa-sun'); mobileIcon.classList.add('fa-moon'); }
+            }
+            
+            // Update particles color based on theme
+            initParticles();
+        }
+
+        // --- PARTICLES ---
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', () => { resize(); initParticles(); });
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if(this.x > canvas.width) this.x = 0;
+                if(this.x < 0) this.x = canvas.width;
+                if(this.y > canvas.height) this.y = 0;
+                if(this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.fillStyle = document.body.classList.contains('dark-mode') ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.1)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for(let i=0; i<50; i++) particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animate);
+        }
+        
+        initParticles();
+        animate();
+    </script>
+</body>
+</html>

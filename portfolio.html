@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Little Wing</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS File Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Particles -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-feather-pointed fa-lg"></i>
+                Little Wing
+            </a>
+            
+            <!-- Dark Mode Toggle (Mobile) -->
+            <button class="theme-toggle-btn d-lg-none ms-auto me-3" onclick="toggleTheme()">
+                <i class="fa-solid fa-moon" id="theme-icon-mobile"></i>
+            </button>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                
+                <!-- Dark Mode Toggle (Desktop) -->
+                <button class="theme-toggle-btn d-none d-lg-flex" onclick="toggleTheme()">
+                    <i class="fa-solid fa-moon" id="theme-icon-desktop"></i>
+                </button>
+
+                <a href="contact.html" class="btn btn-primary-custom">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Our Work</h1>
+            <div class="title-underline"></div>
+            <p class="page-desc">
+                Explore our recent projects. We take pride in delivering high-quality digital solutions that drive results.
+            </p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section-padding" style="padding-top: 0;">
+        <div class="container">
+            
+            <!-- Filters -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" onclick="filterPortfolio('all')">All Projects</button>
+                <button class="filter-btn" onclick="filterPortfolio('web')">Web Development</button>
+                <button class="filter-btn" onclick="filterPortfolio('app')">Mobile Apps</button>
+                <button class="filter-btn" onclick="filterPortfolio('graphics')">Branding</button>
+                <button class="filter-btn" onclick="filterPortfolio('video')">Video Editing</button>
+            </div>
+
+            <!-- Grid -->
+            <div class="row g-4 portfolio-grid">
+                
+                <!-- Item 1: Web -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="web">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="SaaS Dashboard">
+                        </div>
+                        <div class="portfolio-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="cat-tag text-purple">WEB DEV</span>
+                                <span class="year">2024</span>
+                            </div>
+                            <h4 class="project-title">Fintech SaaS Dashboard</h4>
+                            <p class="project-desc">A complete banking dashboard with real-time analytics.</p>
+                            <div class="tech-tags">
+                                <span>React</span><span>Node.js</span>
+                            </div>
+                            <a href="#" class="view-case-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: App -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="app">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80" alt="Fitness App">
+                        </div>
+                        <div class="portfolio-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="cat-tag text-blue">MOBILE APP</span>
+                                <span class="year">2024</span>
+                            </div>
+                            <h4 class="project-title">FitLife Tracking App</h4>
+                            <p class="project-desc">Cross-platform app for tracking health & fitness goals.</p>
+                            <div class="tech-tags">
+                                <span>Flutter</span><span>Firebase</span>
+                            </div>
+                            <a href="#" class="view-case-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Graphics -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="graphics">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1626785774583-b756fe97ea56?auto=format&fit=crop&w=600&q=80" alt="Brand Identity">
+                        </div>
+                        <div class="portfolio-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="cat-tag text-orange">BRANDING</span>
+                                <span class="year">2023</span>
+                            </div>
+                            <h4 class="project-title">EcoCafe Brand Identity</h4>
+                            <p class="project-desc">Logo, packaging, and visual identity design for a coffee brand.</p>
+                            <div class="tech-tags">
+                                <span>Illustrator</span><span>Photoshop</span>
+                            </div>
+                            <a href="#" class="view-case-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Video -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="video">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1574717432707-c589871f672e?auto=format&fit=crop&w=600&q=80" alt="Video Editing">
+                        </div>
+                        <div class="portfolio-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="cat-tag text-red">VIDEO</span>
+                                <span class="year">2023</span>
+                            </div>
+                            <h4 class="project-title">Corporate Promo Reel</h4>
+                            <p class="project-desc">Dynamic editing and motion graphics for a tech launch.</p>
+                            <div class="tech-tags">
+                                <span>Premiere Pro</span><span>After Effects</span>
+                            </div>
+                            <a href="#" class="view-case-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5: Web -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="web">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=600&q=80" alt="E-commerce">
+                        </div>
+                        <div class="portfolio-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="cat-tag text-purple">E-COMMERCE</span>
+                                <span class="year">2023</span>
+                            </div>
+                            <h4 class="project-title">Luxe Fashion Store</h4>
+                            <p class="project-desc">A premium Shopify store with custom theme development.</p>
+                            <div class="tech-tags">
+                                <span>Shopify</span><span>Liquid</span>
+                            </div>
+                            <a href="#" class="view-case-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6: App -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="app">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=600&q=80" alt="Food Delivery">
+                        </div>
+                        <div class="portfolio-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="cat-tag text-blue">MOBILE APP</span>
+                                <span class="year">2023</span>
+                            </div>
+                            <h4 class="project-title">QuickEats Delivery</h4>
+                            <p class="project-desc">UI/UX and development for a local food delivery service.</p>
+                            <div class="tech-tags">
+                                <span>React Native</span><span>UX Research</span>
+                            </div>
+                            <a href="#" class="view-case-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Load More Btn -->
+            <div class="text-center mt-5">
+                <a href="contact.html" class="btn btn-outline-secondary rounded-pill px-4">Start Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="fw-bold mb-3" style="color: var(--text-main);"><i class="fa-solid fa-feather-pointed text-primary"></i> Little Wing</h4>
+                    <p class="text-muted small">
+                        Empowering businesses with top-notch digital solutions since 2020.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-muted fs-5"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-muted fs-5"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="text-muted fs-5"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6 mb-4">
+                    <h6 class="fw-bold mb-3" style="color: var(--text-main);">Company</h6>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Careers</a>
+                    <a href="#" class="footer-link">Blog</a>
+                </div>
+                <div class="col-lg-2 col-6 mb-4">
+                    <h6 class="fw-bold mb-3" style="color: var(--text-main);">Services</h6>
+                    <a href="services.html" class="footer-link">Web Dev</a>
+                    <a href="services.html" class="footer-link">App Dev</a>
+                    <a href="services.html" class="footer-link">SEO</a>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-3" style="color: var(--text-main);">Get the App</h6>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2">
+                            <i class="fa-brands fa-apple fs-4"></i>
+                            <div class="text-start" style="line-height:1"><small style="font-size:0.6rem">Download on</small><br>App Store</div>
+                        </button>
+                        <button class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2">
+                            <i class="fa-brands fa-google-play fs-4"></i>
+                            <div class="text-start" style="line-height:1"><small style="font-size:0.6rem">GET IT ON</small><br>Google Play</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center border-top mt-5 pt-4 text-muted small">
+                &copy; 2026 Little Wing Technologies. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // --- FILTER FUNCTION ---
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Toggle active class
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.textContent.toLowerCase().includes(category) || (category === 'all' && btn.textContent.includes('All'))) {
+                    btn.classList.add('active');
+                }
+            });
+            // Manual active state fix for exact clicks
+            event.target.classList.add('active');
+
+            // Show/Hide items
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                    // Optional: Fade in animation class
+                    item.style.opacity = '0';
+                    setTimeout(() => item.style.opacity = '1', 50);
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // --- THEME TOGGLE ---
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            
+            const desktopIcon = document.getElementById('theme-icon-desktop');
+            const mobileIcon = document.getElementById('theme-icon-mobile');
+            
+            if(isDark){
+                if(desktopIcon) { desktopIcon.classList.remove('fa-moon'); desktopIcon.classList.add('fa-sun'); }
+                if(mobileIcon) { mobileIcon.classList.remove('fa-moon'); mobileIcon.classList.add('fa-sun'); }
+            } else {
+                if(desktopIcon) { desktopIcon.classList.remove('fa-sun'); desktopIcon.classList.add('fa-moon'); }
+                if(mobileIcon) { mobileIcon.classList.remove('fa-sun'); mobileIcon.classList.add('fa-moon'); }
+            }
+            initParticles();
+        }
+
+        // --- PARTICLES ---
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', () => { resize(); initParticles(); });
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if(this.x > canvas.width) this.x = 0;
+                if(this.x < 0) this.x = canvas.width;
+                if(this.y > canvas.height) this.y = 0;
+                if(this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.fillStyle = document.body.classList.contains('dark-mode') ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.1)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for(let i=0; i<50; i++) particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animate);
+        }
+        
+        initParticles();
+        animate();
+    </script>
+</body>
+</html>
